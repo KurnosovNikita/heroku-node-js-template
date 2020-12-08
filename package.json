@@ -7,19 +7,24 @@
 	},
 	"main": "src/server.js",
 	"scripts": {
-		"start": "babel-node src/server.js",
-		"dev": "nodemon src/server.js --exec babel-node",
+		"start": "cross-env APP_ENV=production NODE_ENV=production babel-node src/server.js",
+		"dev": "cross-env APP_ENV=development NODE_ENV=development nodemon src/server.js --exec babel-node",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"heroku-postbuild": "npm install"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"cross-env": "^7.0.3",
 		"express": "^4.17.1"
 	},
 	"devDependencies": {
-		"babel-cli": "^6.18.0",
-		"babel-preset-env": "1.6.0",
+		"@babel/cli": "^7.12.8",
+		"@babel/core": "^7.12.9",
+		"@babel/node": "^7.12.6",
+		"@babel/polyfill": "^7.12.1",
+		"@babel/preset-env": "^7.12.7",
+		"babel-plugin-module-resolver": "^4.0.0",
 		"nodemon": "^1.19.4"
 	}
 }

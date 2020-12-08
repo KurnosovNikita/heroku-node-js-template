@@ -1,9 +1,7 @@
 import http from "http";
 import express from 'express';
+import { PORT } from 'environment-configuration';
 import apiRouter from './api';
-import fs from "fs";
-
-const PORT = process.env.PORT || '4000';
 
 const start = async () => {
     const server = express();
